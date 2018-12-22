@@ -1,0 +1,65 @@
+html {
+    background: rgb(81, 204, 241);
+
+}
+
+.clock {
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid white;
+    border-radius: 40%;
+
+    position:relative; /* Why does this make the hand class centered! */
+
+    background: grey;
+}
+
+.clock-face {
+    height: 100%;
+}
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+
+    position: absolute;
+    
+    transform-origin: 100%;
+    transform: rotate(90deg);
+
+    top: 50%;
+}
+
+    .hand-HR {
+        background: red;
+    }
+    .hand-MIN {
+        background: yellow;
+    }
+    .hand-SEC {
+        background: orange;
+    }
+
+.digitalClock {
+    width: 50%;
+
+    position: relative;
+    margin: 0 auto;
+
+
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 3rem;
+
+    border: 1px solid black;
+    background: lightgray;
+
+}
+
+    .digitalBox {
+        padding: .5rem;
+        border: 1px solid black;
+
+    }

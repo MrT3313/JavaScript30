@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS + CSS Clock</title>
+<link rel="stylesheet" href="CleanSlate.css">
+
+</head>
+<body>
+
+<div class="clock">
+    <div class="clock-face">
+        <div class="hand hand-HR"></div>
+        <div class="hand hand-MIN"></div>
+        <div class="hand hand-SEC"></div>
+        <div class="digitalClock">
+            <div class="digitalBox digital-hours">
+                04
+                <!-- <script type="text/javascript">
+                    document.write(secondHand)
+                </script> -->
+            </div>
+            <div class="digitalBox digital-minutes">
+                15
+            </div>
+            <div class="digitalBox digital-seconds">
+                55
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    
+    const secondHand = document.querySelector('.hand-SEC');
+    const minHand = document.querySelector('.hand-MIN');
+    const hrHand = document.querySelector('.hand-HR');
+
+    function setDate() {
+        const now = new Date();
+
+        const seconds = now.getSeconds();
+        const secondsDEG = ((seconds / 60) * 360) + 90;
+        secondHand.style.transform = `rotate(${secondsDEG}deg)`;
+    
+        const minutes = now.getMinutes();
+        const minutesDEG = ((minutes / 60) * 360) + ((seconds/60)*6) + 90;
+        minHand.style.transform = `rotate(${minutesDEG}deg)`;
+
+        const hours = now.getHours();
+        const hoursDEG = ((hours / 12) * 360) + ((minutes/60)*30) + 90;
+        hrHand.style.transform = `rotate(${hoursDEG}deg)`;
+    }
+
+    setInterval(setDate, 1000);
+
+    setDate();
+</script>
+
+
+</body>
+</html>
